@@ -1,0 +1,73 @@
+{
+  "name": "Enquiry",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Name of the person enquiring"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone or WhatsApp number"
+    },
+    "preferred_date": {
+      "type": "string",
+      "description": "Preferred viewing date (YYYY-MM-DD)"
+    },
+    "service_interest": {
+      "type": "string",
+      "description": "What the enquiry is about",
+      "enum": [
+        "Buying a Home",
+        "Renting",
+        "Interior Design",
+        "Selling My Property",
+        "Property Viewing"
+      ],
+      "enumColors": [
+        "blue",
+        "green",
+        "purple",
+        "yellow",
+        "gray"
+      ]
+    },
+    "property_title": {
+      "type": "string",
+      "description": "Property the viewing was requested for, if any"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone",
+    "service_interest"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

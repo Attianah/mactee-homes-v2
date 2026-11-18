@@ -1,0 +1,20 @@
+# Static web server settings used by Wasmer Edge.
+# /public is where dist/client is mounted inside the deployed package.
+[general]
+host = "::"
+port = 8080
+root = "/public"
+
+log-level = "error"
+
+cache-control-headers = true
+compression = true
+compression-static = true
+
+# The site is a single page app: any unknown path is answered with index.html
+# so deep links such as /properties/<id> work on a hard refresh.
+page-fallback = "./index.html"
+index-files = "index.html"
+
+directory-listing = false
+redirect-trailing-slash = true

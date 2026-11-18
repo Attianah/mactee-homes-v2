@@ -1,0 +1,5 @@
+kind: wasmer.io/App.v0
+# Replace with your Wasmer username (shown at wasmer.io after logging in).
+owner: your-wasmer-username
+name: mactee-homes
+package: .

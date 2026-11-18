@@ -1,0 +1,122 @@
+{
+  "name": "Property",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Listing headline, e.g. 4-Bedroom Detached Executive Home"
+    },
+    "location": {
+      "type": "string",
+      "description": "Display location shown on the card, e.g. Spintex Road, Accra"
+    },
+    "area": {
+      "type": "string",
+      "description": "Neighbourhood used for search filtering",
+      "enum": [
+        "Spintex",
+        "East Legon",
+        "Cantonments",
+        "Airport Residential",
+        "Tema"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "green",
+        "yellow",
+        "gray"
+      ]
+    },
+    "property_type": {
+      "type": "string",
+      "description": "Type of property",
+      "enum": [
+        "Detached House",
+        "Townhouse",
+        "Apartment",
+        "Land",
+        "Villa"
+      ],
+      "enumColors": [
+        "yellow",
+        "blue",
+        "green",
+        "gray",
+        "purple"
+      ]
+    },
+    "listing_type": {
+      "type": "string",
+      "description": "Whether the property is for sale or for rent",
+      "enum": [
+        "For Sale",
+        "For Rent"
+      ],
+      "enumColors": [
+        "green",
+        "blue"
+      ]
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in USD (per month for rentals)"
+    },
+    "beds": {
+      "type": "number"
+    },
+    "baths": {
+      "type": "number"
+    },
+    "sqm": {
+      "type": "number",
+      "description": "Internal floor area in square metres"
+    },
+    "badge": {
+      "type": "string",
+      "description": "Small label on the card, e.g. Featured, New Listing, Luxury"
+    },
+    "description": {
+      "type": "string"
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "featured": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "title",
+    "location",
+    "listing_type",
+    "price"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

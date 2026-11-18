@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 27% 96%;
+    --foreground: 240 4% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 4% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 4% 11%;
+    --primary: 35 47% 57%;
+    --primary-foreground: 240 4% 11%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 240 4% 11%;
+    --muted: 40 18% 92%;
+    --muted-foreground: 240 4% 34%;
+    --accent: 38 38% 88%;
+    --accent-foreground: 240 4% 11%;
+    --destructive: 0 68% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 16% 85%;
+    --input: 38 16% 85%;
+    --ring: 35 47% 57%;
+    --chart-1: 35 47% 57%;
+    --chart-2: 152 23% 23%;
+    --chart-3: 40 20% 78%;
+    --chart-4: 240 4% 11%;
+    --chart-5: 20 45% 60%;
+    --radius: 0.375rem;
+    --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 40 27% 96%;
+    --sidebar-foreground: 240 4% 11%;
+    --sidebar-primary: 35 47% 57%;
+    --sidebar-primary-foreground: 240 4% 11%;
+    --sidebar-accent: 40 20% 92%;
+    --sidebar-accent-foreground: 240 4% 11%;
+    --sidebar-border: 38 16% 85%;
+    --sidebar-ring: 35 47% 57%;
+  }
+
+  .dark {
+    --background: 240 4% 8%;
+    --foreground: 40 27% 96%;
+    --card: 240 4% 11%;
+    --card-foreground: 40 27% 96%;
+    --popover: 240 4% 11%;
+    --popover-foreground: 40 27% 96%;
+    --primary: 35 47% 57%;
+    --primary-foreground: 240 4% 11%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 40 27% 96%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 40 12% 70%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 40 27% 96%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 4% 20%;
+    --input: 240 4% 20%;
+    --ring: 35 47% 57%;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #c59b5f;
+    color: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
